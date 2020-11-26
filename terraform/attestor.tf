@@ -9,7 +9,7 @@ resource "google_cloud_run_service" "vulnerability_policy_attestor" {
     spec {
       service_account_name = google_service_account.vulnerability_policy_attestor.email
       containers {
-        image = "eu.gcr.io/speeltuin-mvanholsteijn/gcr-kritis-signer@sha256:cf92b969f52ff4ffd8faf56dc50a78ffcfa12792be4f1e19b755a658d4bfa163"
+        image = "gcr.io/binx-io-public/gcr-kritis-signer:0.0.0"
         env {
           name  = "ATTESTATION_PROJECT"
           value = var.project
