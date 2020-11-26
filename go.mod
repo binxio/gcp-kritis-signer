@@ -1,0 +1,63 @@
+module github.com/binxio/gcr-kritis-signer
+
+go 1.14
+
+require (
+	cloud.google.com/go v0.37.4
+	github.com/grafeas/kritis v0.2.3-0.20200828162839-155d9ea3007a
+	github.com/Azure/go-autorest v10.12.0+incompatible
+	github.com/BurntSushi/toml v0.3.1
+	github.com/davecgh/go-spew v1.1.1
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/docker/distribution v2.7.1+incompatible
+	github.com/ghodss/yaml v1.0.0
+	github.com/gogo/protobuf v1.2.0
+	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
+	github.com/golang/protobuf v1.3.2
+	github.com/google/btree v0.0.0-20180813153112-4030bb1f1f0c
+	github.com/google/go-cmp v0.4.0
+	github.com/google/go-containerregistry v0.0.0-20180705144858-d54baf9aa28e
+	github.com/google/gofuzz v0.0.0-20170612174753-24818f796faf
+	github.com/googleapis/gnostic v0.2.0
+	github.com/gophercloud/gophercloud v0.0.0-20180708220030-45c2d035713f
+	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7
+	github.com/hashicorp/golang-lru v0.5.0
+	github.com/imdario/mergo v0.3.5
+	github.com/inconshreveable/mousetrap v1.0.0
+	github.com/json-iterator/go v0.0.0-20180701071628-ab8a2e0c74be
+	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+	github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742
+	github.com/opencontainers/go-digest v1.0.0 // indirect
+	github.com/petar/GoLLRB v0.0.0-20130427215148-53be0d36a84c
+	github.com/peterbourgon/diskv v2.0.1+incompatible
+	github.com/pkg/errors v0.8.0
+	github.com/sirupsen/logrus v1.2.0
+	github.com/spf13/cobra v0.0.3
+	github.com/spf13/pflag v1.0.1
+	go.opencensus.io v0.20.1
+	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
+	golang.org/x/exp v0.0.0-20200513190911-00229845015e
+	golang.org/x/lint v0.0.0-20200302205851-738671d3881b
+	golang.org/x/mod v0.3.0
+	golang.org/x/net v0.0.0-20200226121028-0de0cce0169b
+	golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421
+	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
+	golang.org/x/sys v0.0.0-20191001151750-bb3f8db39f24
+	golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2
+	golang.org/x/time v0.0.0-20181108054448-85acf8d2951c
+	golang.org/x/tools v0.0.0-20200615190835-a2fa627c4bf4
+	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
+	google.golang.org/api v0.3.1
+	google.golang.org/appengine v1.4.0
+	google.golang.org/genproto v0.0.0-20191230161307-f3c370f40bfb
+	google.golang.org/grpc v1.19.0
+	gopkg.in/inf.v0 v0.9.1
+	gopkg.in/yaml.v2 v2.2.1
+	honnef.co/go/tools v0.0.1-2020.1.4
+	k8s.io/api v0.0.0-20180607160240-8c14244ab7ee
+	k8s.io/apimachinery v0.0.0-20180228050457-302974c03f7e
+	k8s.io/client-go v0.0.0-20180608153230-74dcea033614
+	k8s.io/code-generator v0.0.0-20180228050103-7ead8f38b01c
+	k8s.io/gengo v0.0.0-20180702041517-fdcf9f9480fd
+	k8s.io/kube-openapi v0.0.0-20180629012420-d83b052f768a
+)
