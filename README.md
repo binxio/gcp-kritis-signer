@@ -6,7 +6,8 @@ GCR kritis signer is a service that creates an attestation for a container image
   against the policy. When it passes the policy, it creates an attestation.
   
 ## api specification
-The following tables shows the available operations from the [api](./api-specification.yaml):
+The following tables shows the available operations from the [api](https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbinxio%2Fgcr-kritis-signer%2F%s%2Fapi-specification.yaml):
+
 
 | path            | description               |
 | --------------- | --------------------------|

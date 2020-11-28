@@ -37,6 +37,7 @@ resource "google_cloud_run_service" "vulnerability_policy_attestor" {
       }
     }
   }
+  depends_on = [google_project_service.run]
 }
 
 ## the service account and associated roles required to create attestations
@@ -99,6 +100,7 @@ resource "google_service_account_iam_binding" "vulnerability_policy_attestor_inv
   members = [
     "serviceAccount:service-${data.google_project.current.number}@gcp-sa-pubsub.iam.gserviceaccount.com"
   ]
+  depends_on = [google_project_service.pubsub]
 }
 
 # subscribe the attestor to the container analysis occurrences events
@@ -114,12 +116,14 @@ resource "google_pubsub_subscription" "vulnerability_policy_attestor" {
       service_account_email = google_service_account.vulnerability_policy_attestor_invoker.email
     }
   }
+  depends_on = [google_project_service.pubsub]
 }
 
 # KMS Key identifying the vulnerability scan attestor
 resource "google_kms_key_ring" "vulnerability_policy_attestors" {
-  name     = "vulnerability_policy_attestors"
-  location = "eur4"
+  name       = "vulnerability_policy_attestors"
+  location   = "eur4"
+  depends_on = [google_project_service.cloudkms]
 }
 
 resource "google_kms_crypto_key" "vulnerability_policy_attestor" {

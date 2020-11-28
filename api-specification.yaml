@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: gcr-signer
+  title: gcr-kritis-signer
   description: |
     checks whether the container image vulnerabilities compliant with the policy and creates an attestation.
   contact:
@@ -11,7 +11,7 @@ info:
   version: 0.1.0
 externalDocs:
   description: Checkout the source code
-  url: https://github.com/grafeas/kritis/cmd/kritis/gcr-signer
+  url: https://github.com/binxio/gcr-kritis-signer
 servers:
   - url: /
 security:

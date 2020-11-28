@@ -1,5 +1,17 @@
-resource google_project_service "container" {
-  service            = "container.googleapis.com"
+
+resource google_project_service "run" {
+  service            = "run.googleapis.com"
+  disable_on_destroy = false
+}
+
+
+resource google_project_service "cloudkms" {
+  service            = "cloudkms.googleapis.com"
+  disable_on_destroy = false
+}
+
+resource google_project_service "pubsub" {
+  service            = "pubsub.googleapis.com"
   disable_on_destroy = false
 }
 
