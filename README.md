@@ -1,6 +1,6 @@
-# Kritis GCP Signer
+# GCR kritis signer
 
-Kritis GCP Signer is a service that creates an attestation for a container image if it passes the vulnerability policy. 
+GCR kritis signer is a service that creates an attestation for a container image if it passes the vulnerability policy. 
   it will accept direct check and sign requests, but it can be subscribed to the topic
   `container-analysis-occurrence-v1`. When a container vulnerability analysis has completed, it checks the vulnerabilities 
   against the policy. When it passes the policy, it creates an attestation.
@@ -34,10 +34,10 @@ If it does not pass the policy, the message will be.
 ```json
 {
   "status": "failed",
-  "image": "gcr.io/speeltuin-mvanholsteijn/a27@sha256:f86657a463e3de9e5176e4774640c76399b2480634af97f45354f1553e372cc9",
+  "image": "gcr.io/project/a27@sha256:f86657a463e3de9e5176e4774640c76399b2480634af97f45354f1553e372cc9",
   "violations": [
-    "found unfixable CVE projects/goog-vulnz/notes/CVE-2018-18344 in gcr.io/project/alpine@sha256:f86657a463e3de9e5176e4774640c76399b2480634af97f45354f1553e372cc9, which has severity MEDIUM exceeding max unfixable severity LOW",
-    "found unfixable CVE projects/goog-vulnz/notes/CVE-2020-1751 in gcr.io/project/alpine@sha256:f86657a463e3de9e5176e4774640c76399b2480634af97f45354f1553e372cc9, which has severity MEDIUM exceeding max unfixable severity LOW",
+    "found unfixable CVE projects/goog-vulnz/notes/CVE-2018-18344 in gcr.io/..., which has severity MEDIUM exceeding max unfixable severity LOW",
+    "found unfixable CVE projects/goog-vulnz/notes/CVE-2020-1751 in gcr.io/..., which has severity MEDIUM exceeding max unfixable severity LOW",
   ]
 }
 ```
