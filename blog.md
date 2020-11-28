@@ -1,9 +1,9 @@
 # How to automate container image signing for use in Google Binary Authorization
 
 Google Binary Authorization allows you to control which images are
-  allowed to run on your Kubernetes cluster. It allows you to name the 
+  allowed to run on your Kubernetes cluster. It allows you to name the
   images explicitly, or required images to be signed off for use. In this
-  blog I will should you how to automate signing off images which pass the 
+  blog I will should you how to automate signing off images which pass the
   vulnerability scan policy.
 
 <!--more -->
@@ -12,7 +12,7 @@ When you create a GKE cluster with binary authorization enabled, you specify
   for the image.
 
 ## authorize images by name
-The following policy only allow images from the GCR registries in 
+The following policy only allow images from the GCR registries in
   the us and the eu from the project `binx-io-public`:
 
 ```yaml
@@ -38,20 +38,13 @@ requireAttestationsBy:
   - projects/binx-io-public/attestors/vulnerability-policy
 ```
 
-An attestor is somebody who affirms that the image is genuine by 
-  signing a written statement. 
-  In the above case we state that we will only run images that
-  have been attested to pass our security vulnerabilities policy.
+An attestor is somebody who affirms that the image is genuine by
+  signing a written statement. In the above case we state that we will only
+  run images that have been attested to pass a security vulnerabilities policy.
 
 ## container vulnerability scanning
-Google cloud platform provides a container vulnerability
-  scanning service. Images that are pushed will be scanned
-  for vulnerabilities. To see the scanning in action, you create
-  a pubsub subscription first, by typing:
-
-```
-gcloud pubsub subscriptions create scans --topic container-analysis-occurrences-v1
-```
+When you enable the container scanning service, each image pushed to
+  the registry is scanned for vulnerabilities. For instance,
 
 ```bash
 export PROJECT_ID=binx-io-public
