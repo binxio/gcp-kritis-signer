@@ -9,7 +9,7 @@ resource "google_cloud_run_service" "vulnerability_policy_attestor" {
     spec {
       service_account_name = google_service_account.vulnerability_policy_attestor.email
       containers {
-        image = "gcr.io/binx-io-public/gcr-kritis-signer:0.0.0"
+        image = "gcr.io/binx-io-public/gcr-kritis-signer:0.0.3"
         env {
           name  = "ATTESTATION_PROJECT"
           value = var.project
@@ -64,18 +64,6 @@ resource "google_project_iam_member" "vulnerability_policy_attestor_containerana
   member  = "serviceAccount:${google_service_account.vulnerability_policy_attestor.email}"
   project = var.project
 }
-
-## Service account key for the vulnerability_policy_attestor. Only neccessary for kritis demo
-resource "google_service_account_key" "vulnerability_policy_attestor" {
-  service_account_id = google_service_account.vulnerability_policy_attestor.name
-}
-
-resource "local_file" "vulnerability_policy_attestor" {
-  content         = base64decode(google_service_account_key.vulnerability_policy_attestor.private_key)
-  filename        = "keys/vulnerability-attestor.json"
-  file_permission = "0600"
-}
-
 
 # define who can invoke this attestor
 resource "google_service_account" "vulnerability_policy_attestor_invoker" {
