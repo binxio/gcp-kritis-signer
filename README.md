@@ -4,6 +4,8 @@ GCR kritis signer is a service that creates an attestation for a container image
   it will accept direct check and sign requests, but it can be subscribed to the topic
   `container-analysis-occurrence-v1`. When a container vulnerability analysis has completed, it checks the vulnerabilities 
   against the policy. When it passes the policy, it creates an attestation.
+
+Read [How to automate the Kritis Signer on Google Cloud Platform](https://binx.io/blog/2020/11/29/how-to-automate-the-kritis-signer-on-google-cloud-platform)
   
 ## api specification
 The following tables shows the available operations from the [api](https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbinxio%2Fgcr-kritis-signer%2F%s%2Fapi-specification.yaml):
