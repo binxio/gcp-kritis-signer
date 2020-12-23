@@ -1,5 +1,7 @@
 # GCR kritis signer
 
+The GCR kritis signer has been merged into the [grafeas](https://github.com/grafeas/kritis) code base.
+
 GCR kritis signer is a service that creates an attestation for a container image if it passes the vulnerability policy. 
   it will accept direct check and sign requests, but it can be subscribed to the topic
   `container-analysis-occurrence-v1`. When a container vulnerability analysis has completed, it checks the vulnerabilities 
